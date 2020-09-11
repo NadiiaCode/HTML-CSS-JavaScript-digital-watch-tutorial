@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch</title>
+  </head>
+  <body>
+    <p id="clock"></p>
+
+    <style>
+      body {
+        background-color: black;
+      }
+
+      p {
+        background-color: rgb(255, 0, 128);
+        color: black;
+        height: 100px;
+        font-family: Georgia;
+        font-size: 75px;
+        font-weight: 800;
+        text-align: center;
+        box-shadow: 0px 0px 10px 3px rgb(255, 188, 252);
+      }
+    </style>
+
+    <script>
+      function time() {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        if (m < 10) {
+          m = "0" + m;
+        }
+
+        if (s < 10) {
+          s = "0" + s;
+        }
+
+        document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+      }
+
+      setInterval(time, 1000);
+    </script>
+  </body>
+</html>
